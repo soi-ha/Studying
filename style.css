@@ -1,3 +1,10 @@
+:root {
+  --text-color: #424242;
+  --background-color: #fcd734;
+  --accent-color: #000070;
+  --point-color: #ffff81;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -9,24 +16,24 @@ body {
 
 a {
   text-decoration: none;
-  color: #424242;
+  color: var(--text-color);
 }
 
 .yeoni {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fcd734;
+  background-color: var(--background-color);
   padding: 10px 25px;
 }
 
 .y_logo {
   font-size: 25px;
-  color: #424242;
+  color: var(--text-color);
 }
 
 .y_logo i {
-  color: #000070;
+  color: var(--accent-color);
   font-size: 27px;
 }
 
@@ -41,13 +48,13 @@ a {
 }
 
 .y_menu li:hover {
-  background-color: #ffff81;
+  background-color: var(--point-color);
   border-radius: 3px;
 }
 
 .y_icon {
   list-style: none;
-  color: #424242;
+  color: var(--text-color);
   display: flex;
   padding-left: 0;
 }
@@ -61,7 +68,7 @@ a {
   position: absolute;
   right: 32px;
   font-size: 23px;
-  color: #00007;
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 768px) {
