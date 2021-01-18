@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #424242;
+}
+
+.yeoni {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fcd734;
+  padding: 10px 25px;
+}
+
+.y_logo {
+  font-size: 25px;
+  color: #424242;
+}
+
+.y_logo i {
+  color: #000070;
+  font-size: 27px;
+}
+
+.y_menu {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.y_menu li {
+  padding: 8px 20px;
+}
+
+.y_menu li:hover {
+  background-color: #ffff81;
+  border-radius: 3px;
+}
+
+.y_icon {
+  list-style: none;
+  color: #424242;
+  display: flex;
+  padding-left: 0;
+}
+
+.y_icon li {
+  padding: 8px 17px;
+}
+
+.y_toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 23px;
+  color: #00007;
+}
+
+@media screen and (max-width: 768px) {
+  .yeoni {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .y_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .y_menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .y_icon {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .y_toggleBtn {
+    display: block;
+  }
+
+  .y_menu.active,
+  .y_icon.active {
+    display: flex;
+  }
+}
