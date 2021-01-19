@@ -1,0 +1,46 @@
+:root {
+  /* color */
+  --white-color: #ffffff;
+  --black-color: #1b1b1b;
+  --blue-color: #1976d2;
+  --red-color: #ff3d00;
+  --grey-light-color: #e0e0e0;
+  --grey-dark-color: #aeaeae;
+
+  /* size */
+  --side-padding: 12px;
+  --avatar-padding: 36px;
+
+  /* font size */
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Nanum Gothic Coding", monospace;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--black-color);
+  color: var(--white-color);
+  padding: var(--side-padding);
+}
+
+.t_logo {
+  font-size: var(--font-large);
+}
+
+.t_logo i {
+  color: var(--red-color);
+  justify-items: center;
+}
