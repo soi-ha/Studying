@@ -28,6 +28,19 @@ body {
   font-family: "Nanum Gothic Coding", monospace;
 }
 
+ul {
+  /* ul에 있는 바(?)들은 어차피 다 없애줄 것이니 한번에 제거 */
+  list-style: none;
+}
+
+button, /* 브라우저 자체에서 꾸며주는 버튼의 속성을 제거함 */
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+}
+
 /* Header */
 
 header {
@@ -68,18 +81,38 @@ header .t_icon .fa-search {
 
 /* Content */
 
-.meta {
+.y_content .meta {
   padding: var(--padding);
 }
 
-/* Meta data */
-.meta .hash {
+/* Content -- Meta data */
+.y_content .meta .hash {
   display: flex;
-  list-style: none;
   color: var(--blue-color);
   font-size: var(--font-small);
 }
 
-.meta .hash li {
+.y_content .meta .hash li {
   margin-right: var(--padding);
+}
+
+.y_content .meta .titleandbutton {
+  display: flex;
+}
+
+.y_content .meta .titleandbutton .title {
+  font-size: var(--font-medium);
+  display: -webkit-box; /* 문장이 길때, ...으로 표현하기 위한 방법 */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 문장이 몇 줄일때 ... 표현 */
+  overflow: hidden; /* 뒤에 글을 숨김 */
+  margin-right: var(--padding);
+}
+
+.y_content .meta .titleandbutton .morebutton {
+  height: 100%; /* 높이가 꽉차게 하여서 버튼을 위로 배치함 */
+}
+
+.y_content .meta .views .m_view {
+  font-size: var(--font-small);
 }
