@@ -8,7 +8,7 @@
   --grey-dark-color: #aeaeae;
 
   /* size */
-  --side-padding: 12px;
+  --padding: 12px;
   --avatar-padding: 36px;
 
   /* font size */
@@ -28,19 +28,58 @@ body {
   font-family: "Nanum Gothic Coding", monospace;
 }
 
+/* Header */
+
 header {
   display: flex;
   justify-content: space-between;
   background-color: var(--black-color);
   color: var(--white-color);
-  padding: var(--side-padding);
+  padding: var(--padding);
 }
 
-.t_logo {
+header .t_logo {
   font-size: var(--font-large);
 }
 
-.t_logo i {
+header .t_logo i {
   color: var(--red-color);
   justify-items: center;
+}
+
+header .t_icon .fa-search {
+  margin-right: var(--padding);
+}
+
+/* Media */
+
+.y_mdeia {
+  /* 좀 더 반응형으로 만들기 위함 */
+  position: sticky; /* video에 작성했을 시 작동하지 않았음 */
+  top: 0; /* 위치를 지정해 주어야 먹힘. 단위는 px */
+  text-align: center; /* 커졌을 때 중간으로 위치시켜줌 */
+  background-color: var(--black-color);
+}
+.y_mdeia video {
+  width: 100%; /* 반응형으로 만들기 가장 쉬운 방법 */
+  height: 100%; /* %를 사용 하는 것 */
+  max-width: 1000px; /* 최대 사이즈를 정해줌으로써 반응형처럼 */
+}
+
+/* Content */
+
+.meta {
+  padding: var(--padding);
+}
+
+/* Meta data */
+.meta .hash {
+  display: flex;
+  list-style: none;
+  color: var(--blue-color);
+  font-size: var(--font-small);
+}
+
+.meta .hash li {
+  margin-right: var(--padding);
 }
