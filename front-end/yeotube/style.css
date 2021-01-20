@@ -76,7 +76,7 @@ header .t_icon .fa-search {
 .y_mdeia video {
   width: 100%; /* 반응형으로 만들기 가장 쉬운 방법 */
   height: 100%; /* %를 사용 하는 것 */
-  max-width: 1000px; /* 최대 사이즈를 정해줌으로써 반응형처럼 */
+  max-width: 700px; /* 최대 사이즈를 정해줌으로써 반응형처럼 */
 }
 
 /* Content */
@@ -172,12 +172,12 @@ header .t_icon .fa-search {
   margin-left: calc(var(--padding) / 2);
 }
 
-.info .name {
+.channelmeta .info .name {
   font-size: var(--font-medium);
   margin-bottom: 2px;
 }
 
-.info .subscriber {
+.channelmeta .info .subscriber {
   font-size: var(--font-small);
   color: var(--grey-dark-color);
 }
@@ -203,11 +203,17 @@ header .t_icon .fa-search {
 
 .y_next .item {
   display: flex;
+  margin-top: var(--padding);
 }
 
-.item img {
+.item .img {
   flex: 1 1 35%; /* 줄어들때 늘어날때 1, basis는 35% */
   /* 그러나 바로 말을 듣지 않음. 이는 이미지가 반응형이 아니기 때문 */
+  margin-right: var(--padding);
+}
+
+.item .img img {
+  width: 100%;
 }
 
 .item .info {
@@ -215,5 +221,23 @@ header .t_icon .fa-search {
 }
 
 .item .mreBtn {
+  height: 100%; /* 버튼을 박스 가장 상단에 위치하도록 */
   float: 1 1 5%;
+}
+
+.item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.y_next .item .title {
+  font-size: var(--font-medium);
+  margin-bottom: 3px;
+}
+
+.y_next .item .name,
+.y_next .item .view {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+  margin-bottom: 2px;
 }
