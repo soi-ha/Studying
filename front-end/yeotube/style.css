@@ -132,7 +132,49 @@ header .t_icon .fa-search {
   font-size: var(--font-small);
 }
 
-.y_content .action li span {
-  padding: 5px;
-  text;
+.y_content .action li i {
+  margin: 0 auto; /* 아이템들을 중간에 오도록 해줌. 위 아래는 지정하지 않음 (0)*/
+  margin-bottom: calc(var(--padding) / 2);
+  /* margin을 bottom보다 위에 썼기 때문에 bottom이 0을 overwriting함 */
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+}
+
+.y_content .action li i.active {
+  color: var(--blue-color);
+}
+
+/* channel */
+
+.channel {
+  display: flex;
+  padding: var(--padding);
+  justify-content: space-between;
+}
+
+.channel .channelmeta {
+  display: flex;
+}
+
+.channel .channelmeta img {
+  width: var(--avatar-padding);
+  height: var(--avatar-padding);
+  border-radius: 50%;
+}
+
+.channel .channelmeta .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 var(--padding);
+}
+
+.info .name {
+  font-size: var(--font-medium);
+  margin-bottom: 2px;
+}
+
+.info .subscriber {
+  font-size: var(--font-micro);
+  color: var(--grey-light-color);
 }
