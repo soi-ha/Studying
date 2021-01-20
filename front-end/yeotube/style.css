@@ -102,15 +102,32 @@ header .t_icon .fa-search {
 
 .y_content .meta .titleandbutton .title {
   font-size: var(--font-medium);
-  display: -webkit-box; /* 문장이 길때, ...으로 표현하기 위한 방법 */
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; /* 문장이 몇 줄일때 ... 표현 */
-  overflow: hidden; /* 뒤에 글을 숨김 */
   margin-right: var(--padding);
+  /* display: -webkit-box;  문장이 길때, ...으로 표현하기 위한 방법 
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 문장이 몇 줄일때 ... 표현 
+  overflow: hidden; 뒤에 글을 숨김  */
+}
+
+.y_content .meta .titleandbutton .title.clamp {
+  display: -webkit-box; /* title이 clamp라는 클래스가 생기면 그때 clamp */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 
 .y_content .meta .titleandbutton .morebutton {
   height: 100%; /* 높이가 꽉차게 하여서 버튼을 위로 배치함 */
+  transition: transform 300ms ease-in-out;
+  /* 버튼에게 애니메이션을 줌 (transition): transform을 변화시킴 300ms동안 
+  ease-in-out을 통해서 */
+}
+
+.y_content .meta .titleandbutton .morebutton.clicked {
+  /* 버튼이 클릭되었을 때만 글이 위로 올라가도록 */
+  transform: rotate(180deg);
+  /* 움직이고 변하는 것은 transform 사용. position,rotation, scale 을 바꿈.
+  rotation을 180도 바꿈 */
 }
 
 .y_content .meta .views .m_view {
@@ -240,4 +257,22 @@ header .t_icon .fa-search {
   font-size: var(--font-small);
   color: var(--grey-dark-color);
   margin-bottom: 2px;
+}
+
+.contentandnext {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .contentandnext {
+    flex-direction: row;
+    margin: var(--padding);
+  }
+  .y_content {
+    flex: 1 1 60%;
+  }
+  .y_next {
+    flex: 1 1 40%;
+  }
 }
