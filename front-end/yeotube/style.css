@@ -4,8 +4,8 @@
   --black-color: #1b1b1b;
   --blue-color: #1976d2;
   --red-color: #ff3d00;
-  --grey-light-color: #e0e0e0;
-  --grey-dark-color: #aeaeae;
+  --grey-light-color: #9e9e9e;
+  --grey-dark-color: #707070;
 
   /* size */
   --padding: 12px;
@@ -115,4 +115,24 @@ header .t_icon .fa-search {
 
 .y_content .meta .views .m_view {
   font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+/* action */
+
+.y_content .action {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+
+.y_content .action button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+}
+
+.y_content .action li span {
+  padding: 5px;
+  text;
 }
