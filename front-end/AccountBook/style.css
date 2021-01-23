@@ -1,3 +1,117 @@
+:root {
+  /* color*/
+  --logo-color: #fff9c4;
+  --icon-color: #004d40;
+  --light-color: #b2fff7;
+  --middle-color: #80ccc4;
+  --dark-color: #4f9b94;
+  --light-grey: #cfd8dc;
+  --text-color: #102027;
+  /* font size*/
+  --font-logo: 23px;
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  /*padding*/
+  --padding: 12px;
+  --menu-padding: 8px 20px;
+  --var-padding: 20px 25px;
+  --graph-padding: 60px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Yeon Sung", cursive;
+  color: var(--text-color);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/*Header*/
+.headvar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--middle-color);
+  padding: var(--var-padding);
+  font-size: var(--font-large);
+}
+
+.headvar .logo {
+  font-size: var(--font-logo);
+}
+
+.headvar .logo i {
+  color: var(--logo-color);
+}
+
+.headvar .menu {
+  display: flex;
+}
+
+.headvar .menu li {
+  padding: var(--menu-padding);
+}
+
+.headvar .menu li:hover {
+  border-radius: 5px;
+  background-color: var(--light-color);
+}
+
+.headvar .icon {
+  display: flex;
+}
+
+.headvar .icon li {
+  padding: var(--padding);
+}
+
+.headvar .toggleBtn {
+  display: none;
+  position: absolute;
+  right: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .headvar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .headvar .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .headvar .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .headvar .icon {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .headvar .toggleBtn {
+    display: block;
+  }
+
+  .headvar .menu.active,
+  .headvar .icon.active {
+    display: flex;
+  }
 }

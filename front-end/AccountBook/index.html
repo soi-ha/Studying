@@ -8,24 +8,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"> <!-- 까먹지 말고 꼭 연결하기...-->
+    <script src="main.js" defer></script>
     <title>AccountBook</title>
 </head>
 <body>
     <!-- Header -->
-    <header>
+    <nav class="headvar">
         <div class="logo">
             <i class="fas fa-money-check-alt"></i>
-            <span class="name">Yeont Book</span> 
+            <a href=''>Yeont Book</a> 
         </div>
         <ul class="menu">
-            <li><a href="">Monthly</a></li>
-            <li><a href="">Statictic</a></li>
+            <li><a href="#">Monthly</a></li>
+            <li><a href="#">Statictic</a></li>
+            <li><a href="#">Writing</a></li>
         </ul>
-        <div class="icon">
-            <i class="fab fa-github"></i>
-            <i class="fab fa-instagram"></i>
-        </div>
-    </header>
+        <ul class="icon">
+            <li><a href="https://github.com/soi-ha/MiniP"><i class="fab fa-github"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <a href="#" class='toggleBtn'>
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
     <!-- Month -->
     <section class="month">
         <div class="Xmonth">1월</div>
