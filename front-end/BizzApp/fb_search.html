@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SY BOOK</title>
+    <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" type="text/css" href="./css/fb_style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fb_menu.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fb_register.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f46452f110.js" crossorigin="anonymous">
+    </script>
+    <script>
+        function updatemenu() {
+    if (document.getElementById('responsive-menu').checked == true) {
+        document.getElementById('menu').style.borderBottomRightRadius = '0';
+        document.getElementById('menu').style.borderBottomLeftRadius = '0';
+    }else{
+        document.getElementById('menu').style.borderRadius = '10px';
+    }
+    }
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="headerwrap">
+        <div id="header">
+            <span class='title'><i class="fas fa-book"></i>SY Book</span>
+        </div>
+        </div>
+        <div id="navigationwrap">
+        <div id="navigation">
+            <nav id='menu'>
+                <input type='checkbox' id='responsive-menu' onclick='updatemenu()'><label></label>
+                <ul>
+                <li><a href='http://ait.kyonggi.ac.kr/~s201910437/fb_home.html'>Home</a></li>
+                <li><a href='http://ait.kyonggi.ac.kr/~s201910437/fb_login.html'>Login</a>
+                </li>
+                <li><a href='http://ait.kyonggi.ac.kr/~s201910437/fb_register.html'>Register</a></li>
+                <li><a href='http://ait.kyonggi.ac.kr/~s201910437/fb_guestbook.html'>Guest Book</a>
+                </li>
+                <li><a href='http://ait.kyonggi.ac.kr/~s201910437/fb_search.html'>Search</a></li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+        <div id="contentliquid"><div id="contentwrap">
+        <div id="content">
+            <div class='search'>
+                <i class="fas fa-search"></i>
+            </div>
+            <span class='liter'>페이지 준비중입니다.</span>
+            <span class='lit'>현재 페이지를 준비하고 있으니 조금만 기다려주세요.</span>
+        </div>
+        <div id="footerwrap">
+        <div id="footer">
+            <span class='etc'>
+                Tel: 031-249-9114<br>
+                E-mail: syc10437@kyonggi.ac.kr<br>
+                Fax: 1800-3901<br>
+                Address: 경기 수원시 영통구 광교산로 154-42<br>
+            </span>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
