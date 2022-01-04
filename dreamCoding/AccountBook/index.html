@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f46452f110.js" crossorigin="anonymous">
+    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- 까먹지 말고 꼭 연결하기...-->
+    <script src="main.js" defer></script>
+    <title>AccountBook</title>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="headvar">
+        <div class="logo">
+            <i class="fas fa-money-check-alt"></i>
+            <a href=''>Yeont Book</a> 
+        </div>
+        <ul class="menu">
+            <li><a href="#">Monthly</a></li>
+            <li><a href="#">Statictic</a></li>
+            <li><a href="#">Writing</a></li>
+        </ul>
+        <ul class="icon">
+            <li><a href="https://github.com/soi-ha/MiniP"><i class="fab fa-github"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <a href="#" class='toggleBtn'>
+            <i class="fas fa-bars"></i>
+        </a>
+    </nav>
+    <!-- Month -->
+    <section class="month">
+        <div class="Xmonth">
+            <span class='mon'>1월</span>
+        </div>
+        <div class="ThisMonth">
+            <div class="Text">
+                <div class="Tplus">이번 달 수입: </div>
+                <div class="Tminus">이번 달 지출:</div>
+                <div class="Tplan">
+                    <label for="plan">이번 달 예산:</label>
+                    <input type="number" id='plan' name='plan'
+                        min='0' placeholder='숫자를 입력하시오.'>
+                </div>
+            </div>
+        </div>
+        <div class="search">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-pen-alt"></i></a>
+        </div>
+    </section>
+
+    <div class="inputAndresult">
+        <!-- View -->
+        <section class="view">
+            <ul>
+                <!-- 01.01 -->
+                <li class="breakdown">
+                    <div class="day">
+                        <span>1일 금요일</span>
+                        <span>하루 총 내역</span>
+                    </div>
+                    <div class="bk">
+                        <div class="account">아빠</div>
+                        <div class="method">수입</div>
+                        <div class="price">300,000</div>
+                        <div class="category">용돈</div>
+                        <div class="memo">1월 용돈</div>
+                    </div>
+                    <div class="bk">
+                        <div class="account">박점장</div>
+                        <div class="method">수입</div>
+                        <div class="price">400,000</div>
+                        <div class="category">급여</div>
+                        <div class="memo">12월 알바비</div>
+                    </div>
+                </li>
+                <!-- 01.03-->
+                <li class="breakdown">
+                    <div class="day">
+                        <span>3일 일요일</span>
+                        <span>하루 총 내역</span>
+                    </div>
+                    <div class="bk">
+                        <div class="account">Melon Music</div>
+                        <div class="method">카드</div>
+                        <div class="price">11,000</div>
+                        <div class="category">문화/여가</div>
+                        <div class="memo">고정지출</div>
+                    </div>
+                </li>
+                <!-- 01.04-->
+                <li class="breakdown">
+                    <div class="day">
+                        <span>4일 월요일</span>
+                        <span>하루 총 내역</span>
+                    </div>
+                    <div class="bk">
+                        <div class="account">호박마트</div>
+                        <div class="method">카드</div>
+                        <div class="price">19,000</div>
+                        <div class="category">식비</div>
+                        <div class="memo">메모</div>
+                    </div>
+                </li>
+                <!-- 01.05-->
+                <li class="breakdown">
+                    <div class="day">
+                        <span>5일 화요일</span>
+                        <span>하루 총 내역</span>
+                    </div>
+                    <div class="bk">
+                        <div class="account">Art Box</div>
+                        <div class="method">카드</div>
+                        <div class="price">12,300</div>
+                        <div class="category">생활</div>
+                        <div class="memo">메모</div>
+                    </div>
+                    <div class="bk">
+                        <div class="account">신한은행</div>
+                        <div class="method">현금</div>
+                        <div class="price">200,000</div>
+                        <div class="category">금융</div>
+                        <div class="memo">1월 적금 입금</div>
+                    </div>
+                </li>
+                <!-- 01.07-->
+                <li class="breakdown">
+                    <div class="day">
+                        <span>7일 목요일</span>
+                        <span>하루 총 내역</span>
+                    </div>
+                    <div class="bk">
+                        <div class="account">하나 마카롱</div>
+                        <div class="method">카드</div>
+                        <div class="price">2,300</div>
+                        <div class="category">간식</div>
+                        <div class="memo">메모</div>
+                    </div>
+                </li>
+                <!-- 01.10-->
+                <li class="breakdown">
+                    <div class="day">
+                        <span>10일 토요일</span>
+                        <span>하루 총 내역</span>
+                    </div>
+                    <div class="bk">
+                        <div class="account">후불교통대금</div>
+                        <div class="method">카드</div>
+                        <div class="price">5,400</div>
+                        <div class="category">교통</div>
+                        <div class="memo">메모</div>
+                    </div>
+                    <div class="bk">
+                        <div class="account">연기대학교 장학지원팀</div>
+                        <div class="method">수입</div>
+                        <div class="price">150,000</div>
+                        <div class="category">장학금</div>
+                        <div class="memo">코로나 학비 지원</div>
+                    </div>
+                </li>
+                <!-- 01.11-->
+                <li class="breakdown">
+                    <div class="day">
+                        <span>11일 월요일</span>
+                        <span>하루 총 내역</span>
+                    </div>
+                    <div class="bk">
+                        <div class="account">교촌치킨</div>
+                        <div class="method">카드</div>
+                        <div class="price">25,000</div>
+                        <div class="category">식비</div>
+                        <div class="memo">메모</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!-- Writing -->
+        <section class="writing">
+            <form action="">
+                <div class="box">
+                    <!-- 날짜-->
+                    <div class="date">
+                        <label for="start">날짜</label>
+                        <input type='date' id='start' name='finacial-date'
+                        value="2021-01-01" min="2020-01-01" max="2021-12-31">
+                    </div>
+                    <!-- 가격 -->
+                    <div class="price">
+                        <input type="number" id='prcie' name='price'
+                            min='0' required placeholder="숫자를 입력하시오.">
+                        <label for="price">원</label>
+                    </div>
+                    <!-- 거래처 명 -->
+                    <div class="account">
+                        <label for="name">거래처 명</label>
+                        <input type="text" id='name' name='name' 
+                        required minlength="1" maxlength="10" placeholder="글자를 입력하시오.">
+                    </div>
+                    <!-- 분류 -->
+                    <div class="classify">
+                        <span>분류</span>
+                        <div class="selcet">
+                            <div>
+                                <input type="radio" id="expense" name="group" value="expense"
+                                checked required> <!-- name의 이름은 수입과 지출이 같아야 함-->
+                                <label for="expense">지출</label> 
+                            </div>
+                            <div>
+                                <input type="radio" id="income" name="group" value="income">
+                                <label for="income">수입</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 결제 방법-->
+                    <div class="method">
+                        <label for="inex-Method">결제 수단</label>
+                        <select name="way">
+                            <option value="credit">카드</option>
+                            <option value="cash">현금</option>
+                            <option value="in">수입</option>
+                        </select>
+                    </div>
+                    <!-- 카테고리 -->
+                    <div class="category">
+                        <label for="ctgory">카테고리</label>
+                        <select name="Ca" id='ctgory' size = '5'>
+                            <optgroup label = '수입'> <!-- css에서 position을 사용하여야 보였다 안 보였다 함-->
+                                <option value="pocket-money">용돈</option>
+                                <option value="scholarship">장학금</option>
+                                <option value="pay">급여</option>
+                                <option value="finance">금융수익</option>
+                                <option value="business">사업수익</option>
+                                <option value="etc">기타</option>
+                            </optgroup>
+                            <optgroup label = '지출'>
+                                <option value="living">생활</option>
+                                <option value="food">식비</option>
+                                <option value="traffic">교통</option>
+                                <option value="pleasure">유흥</option>
+                                <option value="medical">의료/건강</option>
+                                <option value="cafe">카페/디저트</option>
+                                <option value="shopping">쇼핑</option>
+                                <option value="beauty">미용</option>
+                                <option value="car">자동차</option>
+                                <option value="dwelling">주거/통신</option>
+                                <option value="banfing">금융</option>
+                                <option value="culture">문화/여가</option>
+                                <option value="travel">여행/숙박</option>
+                                <option value="education">교육/학습</option>
+                                <option value="pet">반려동물</option>
+                                <option value="present">경조/선물</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                    <!-- 메모 -->
+                    <div class="memo">
+                        <label for="note">메모</label>
+                        <textarea name="note" id="note" cols="30" rows="5" 
+                        placeholder="남기고 싶은 메모를 적으세요."></textarea> 
+                        <!-- placeholder사용 후 <>와 </>가 꼭 붙어야만 placeholder가 나옴-->
+                    </div>
+                </div>
+            </form>
+        </section>
+        <!-- Statistic -->
+        <section class="statistic">
+            <!--카테고리별 지출 비율-->
+            <div class="expercent">
+                <div class="img"><img src="" alt=""></div>
+                <span class="subtitle">카테고리별 지출 비율</span>
+            </div>
+            <!-- 이번 달 주 지출 내역-->
+            <div class="exbreakdown">
+                <div class="img"><img src="" alt=""></div>
+                <span class="subtitle">이번 달 주 지출 내역</span>
+            </div>
+            <!-- 월별 총 지출 그래프 (최근 6개월)-->
+            <div class="expmonth">
+                <div class="img"><img src="" alt=""></div>
+                <span class="subtitle">월별 총 지출 그래프 (최근 6개월)</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
