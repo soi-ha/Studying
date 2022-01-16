@@ -1,5 +1,77 @@
+/* COMMON (공통) */
 body {
-  color: rebeccapurple;
-  font-size: 100px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4; /*글자의 행간을 줌 (줄높이)*/
   font-family: "Nanum Gothic", sans-serif;
+}
+img {
+  display: block;
+  /* 이제 이미지는 더이상 인라인 요소가 아닌 블럭요소가 된다 */
+}
+a {
+  /* 모든 a태그의 밑줄을 없애기 */
+  text-decoration: none;
+}
+
+/* HEADER */
+header {
+  background-color: royalblue;
+}
+header .inner {
+  width: 1100px;
+  height: 120px;
+  margin: 0 auto; /* 가운데 정렬 */
+  background-color: orange;
+  position: relative; /* 자식요소 때문에 position값을 넣는 것이기에 문제가 되지 않기 위해 relative로 함 */
+}
+header .logo {
+  height: 75px; /* 로고의 실제 높이 값, 요소 가운데 배치를 위해 높이값 설정 꼭 필요 */
+  position: absolute; /* 부모요소를 기준으로 배치하겠다. 여기서, 부모요소에 무조건 position값이 있어야 함 */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: none;
+}
+header .sub-menu {
+}
+header .sub-menu ul.menu {
+  font-family: Arial, sans-serif;
+  display: flex; /* 수직이었던 요소들을 수평으로 변경 */
+}
+header .sub-menu ul.menu li {
+  position: relative; /* 가상요소 before의 부모요소는 li태그 */
+}
+header .sub-menu ul.menu li::before {
+  content: ""; /* content라는 속성이 없으면 ::before라는 가상요소는 만들어지지 않는다. */
+  /* display: block; position:absolute로 인해 자동으로 block요소로 변경되어 굳이 사용하지 않아도 됨*/
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+header .sub-menu ul.menu li:first-child:before {
+  /* 여러 li태그들 중에 첫번째 li태그의 가상요소 선택자 before부분을 */
+  display: none;
+  /* sign in 앞에 있던 구분선이 없어진다 */
+}
+header .sub-menu ul.menu li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+}
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+header .sub-menu .search {
+}
+header .sub-menu .search input {
+}
+header .sub-menu .search .material-icons {
 }
