@@ -17,13 +17,13 @@ a {
 
 /* HEADER */
 header {
-  background-color: royalblue;
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
 }
 header .inner {
   width: 1100px;
   height: 120px;
   margin: 0 auto; /* 가운데 정렬 */
-  background-color: orange;
   position: relative; /* 자식요소 때문에 position값을 넣는 것이기에 문제가 되지 않기 위해 relative로 함 */
 }
 header .logo {
@@ -33,9 +33,12 @@ header .logo {
   bottom: 0;
   left: 0;
   margin: auto;
-  display: none;
 }
 header .sub-menu {
+  position: absolute; /* 구조적인 부분에서의 부모는 inner임*/
+  top: 10px;
+  right: 0;
+  display: flex;
 }
 header .sub-menu ul.menu {
   font-family: Arial, sans-serif;
@@ -70,8 +73,37 @@ header .sub-menu ul.menu li a:hover {
   color: #000;
 }
 header .sub-menu .search {
+  position: relative; /* material-icons때문에 생김*/
+  height: 34px;
 }
 header .sub-menu .search input {
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  box-sizing: border-box; /*지정한 크기를 유지하면서 내부 여백과 테두리선이 생기도록 함*/
+  border-radius: 5px;
+  outline: none; /* input박스 선택시 나타나는 파랑색 테두리 선을 없애기*/
+  background-color: #fff;
+  color: #777;
+  font-size: 12px;
+  transition: width .4s; /*focus상태로 넘어갈때 자연스럽게 전환효과 주기*/
+  /* 가로너비만 전환효과 주기 (기본값 all), 지속시간 0.4초(앞에 0은 생략)*/
+}
+header .sub-menu .search input:focus {
+  width: 190px;
+  border-color: #669900;
 }
 header .sub-menu .search .material-icons {
+  position: absolute; /*(구조상)부모요소를 기준으로 배치하겠다는 것*/
+  height: 24px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  /*위 3개의 요소는 수직 가운데 배치를 위해 작성 (추가로 무조건 높이가 있어야 함)*/
+  right: 5px;
+  transition: .4s; /* 기본값 all 생략 */
+}
+header .sub-menu .search.focused .material-icons {
+  opacity: 0; /* search 아이콘 focused상태에서 없애기*/
 }
