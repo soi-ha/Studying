@@ -5,6 +5,7 @@ body {
   font-weight: 400;
   line-height: 1.4; /*글자의 행간을 줌 (줄높이)*/
   font-family: "Nanum Gothic", sans-serif;
+  height: 3000px;
 }
 img {
   display: block;
@@ -19,10 +20,66 @@ a {
   margin: 0 auto; /* 가운데 정렬 */
   position: relative; /* 자식요소 때문에 position값을 넣는 것이기에 문제가 되지 않기 위해 relative로 함 */
 }
+.btn {
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center; /*박스 안에서 글자 가운데 정렬*/
+  cursor: pointer;
+  box-sizing: border-box; /* 패딩, 보더가 들어간 만큼 요소가 커지지 않도록*/
+  display: block; /* a나 span태그에 버튼 클래스를 부여했을 때도 버튼이 정상적으로 나오도록 */
+  transition: .4s; /* hover시 자연스럽게 색상이 바뀌도록 */
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent; /*투명*/
+  color: #333;
+}
+.btn.btn--brown {
+  border-color: #592b18;
+  color: #592b18;
+}
+.btn.btn--brown:hover {
+  background-color: #592b18;
+  color: #fff;
+}
+.btn.btn--gold {
+  border-color: #d9aa8a;
+  color: #d9aa8a;
+}
+.btn.btn--gold:hover {
+  background-color: #d9aa8a;
+  color: #fff;
+}
+.btn.btn--white {
+  border-color: #fff;
+  color: #fff;
+}
+.btn.btn--white:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+
 /* HEADER */
 header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  z-index: 9;
 }
 header > .inner {
   /* '>'는 자식 선택자 */
@@ -174,4 +231,64 @@ header .main-menu .item .item__contents .contents__texture h4 {
 header .main-menu .item .item__contents .contents__texture p {
   color: #669900;
   margin: 4px 0 14px;
+}
+header .badges {
+  position: absolute;
+  top: 132px;
+  right: 12px;
+}
+header .badges .badge {
+  border-radius: 10px;
+  overflow: hidden; /* 깎인 모서리 밖으로 이미지가 넘치지 않도록 함*/
+  margin-bottom: 12px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,.15); /* 그림자 만들어 주기 */
+  cursor: pointer;
+}
+
+/* VISUAL */
+.visual {
+  margin-top: 120px;
+  background-image: url("../images/visual_bg.jpg");
+  background-position: center;
+}
+.visual .inner {
+  height: 646px;
+}
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  left: 275px;
+}
+.visual .fade-in {
+  opacity: 0;
 }

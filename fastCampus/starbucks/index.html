@@ -31,6 +31,14 @@
   <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
   <!-- 파일 연결 -->
   <link rel="stylesheet" href="./css/main.css">
+  <!-- Loadsh -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" 
+  integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" 
+  integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" 
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script defer src="./js/main.js"></script>
 </head>
 <body>
@@ -364,7 +372,39 @@
       </ul>
 
     </div>
+
+    <div class="badges">
+      <div class="badge">
+        <img src="./images/badge1.jpg" alt="Badge">
+      </div>
+      <div class="badge">
+        <img src="./images/badge2.jpg" alt="Badge">
+      </div>
+    </div>
   </header>
+
+  <!-- VISUAL -->
+  <section class="visual">
+    <div class="inner">
+
+      <div class="title fade-in">
+        <img src="./images/visual_title.png" alt="STARBUCKS DELIGHTFUL START TO THE YEARS" />
+        <a href="javascript:void(0)" class="btn btn--brown">자세히보기</a>
+      </div>
+      <div class="fade-in">
+        <img src="./images/visual_cup1.png" alt="new OATMEAL LATTE" class="cup1 image" />
+        <img src="./images/visual_cup1_text.png" alt="오트밀 라떼" class="cup1 text" />
+      </div>
+      <div class="fade-in">
+        <img src="./images/visual_cup2.png" alt="new STARBUCKS CARAMEL CRUMBLE MOCHA" class="cup2 image" />
+        <img src="./images/visual_cup2_text.png" alt="스타벅스 카라멜 크럼블 모카" class="cup2 text" />
+      </div>
+      <div class="fade-in">
+        <img src="./images/visual_spoon.png" alt="spoon" class="spoon" />
+      </div>
+    
+    </div>
+  </section>
 
 </body>
 </html>
