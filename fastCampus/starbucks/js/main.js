@@ -94,3 +94,31 @@ promotionToggleBtn.addEventListener('click', function () {
     promotionEl.classList.remove('hide');
   }
 });
+
+// 범위 랜덤 함수(소수점 2자리까지)
+function random(min, max) {
+  // `.toFixed()`를 통해 반환된 문자 데이터를,
+  // `parseFloat()`을 통해 소수점을 가지는 숫자 데이터로 변환
+  return parseFloat((Math.random() * (max - min) + min).toFixed(2))
+}
+
+function floatingObject(selector, delay, size) { 
+  // delay -> 지연 시간
+  // size -> 위아래로 움직이는 크기
+  // gsap.to(요소, 시간, 옵션);
+  gsap.to(
+    selector, // 선택자
+    random(1.5, 2.5), // 애니메이션 동작 시간
+    { // 옵션
+    // 위에서 만든 random함수 
+      y: size,
+      repeat: -1, // -1값은 무한반복이 되도록 함. 라이브러리에서 지원하는 기능임
+      yoyo: true, // 내려갔으면 올라가게 만들기
+      ease: Power1.easeInOut, // 조금 더 자연스럽게 움직이게 하기
+      delay: random(0, delay)
+    }
+  );
+}
+floatingObject('.floating1', 1, 15);
+floatingObject('.floating2', .5, 15); 
+floatingObject('.floating3', 1.5, 20); 
