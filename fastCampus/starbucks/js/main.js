@@ -22,6 +22,7 @@ searchInputEl.addEventListener('blur', function () {
 });
 
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 window.addEventListener('scroll', _.throttle(function () {
   console.log(window.scrollY);
@@ -35,6 +36,10 @@ window.addEventListener('scroll', _.throttle(function () {
       // 이전에는 이미지만 안 보일 뿐 영역은 그대로 잡혔음
       display: 'none' 
     });
+    // (최상단 이동) 버튼 보이기
+    gsap.to(toTopEl, .2, {
+      x: 0
+    });
   } else {
     // 500이하인 경우, 배지 보이기
     // badgeEl.style.display = 'block';
@@ -42,11 +47,22 @@ window.addEventListener('scroll', _.throttle(function () {
       opacity: 1,
       display: 'block'
     });
+    // (최상단으로 옮기기) 버튼 숨기기
+    gsap.to(toTopEl, .2, {
+      x: 100
+    });
   }
 }, 300));
 // Loadsh의 throttle기능은 화면을 스크롤할 때 실행되는 함수의 갯수를 일정시간에 한번씩만 실행되도록
 // 제한을 걸었음 _.throttle(함수, 시간) -> 시간은 milli second단위로 한다.
 // 화면에서 스크롤 이벤트를 이용해 작업을 할 때 굉장히 많이 사용한다. ->익명의 함수가 굉장히 많이 실행되기 때문에 줄이기 위함임
+
+// 최상단으로 올리기 버튼
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, .7, {
+    scrollTo: 0
+  });
+});
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 fadeEls.forEach(function (fadeEl, index) {
