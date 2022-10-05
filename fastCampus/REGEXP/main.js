@@ -1,4 +1,4 @@
-const str = `
+let str = `
 010-1234-5678
 thesoha@gmail.com
 https://soi-ha.github.io/
@@ -8,4 +8,6 @@ abbcccdddd
 
 // const regexp = new RegExp('the','gi')
 const regexp = /fox/gi
-console.log(regexp.test(str))
+// console.log(regexp.test(str))
+str = str.replace(regexp, 'AAA')
+console.log(str)
