@@ -7,5 +7,5 @@ abbcccdddd
 `
 
 // const regexp = new RegExp('the','gi')
-const regexp = /the/gi
-console.log(str.match(regexp))
+const regexp = /fox/gi
+console.log(regexp.test(str))
