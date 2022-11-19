@@ -27,3 +27,6 @@ const p42: Person4 = {
 //     console.log(`안녕하세요! ${this.name}입니다.`)
 //   },
 // }
+
+p41.hello();
+p42.hello();

@@ -1,9 +1,9 @@
 "use strict";
-function hello(person) {
+function hello1(person) {
     console.log(`안녕하세요! ${person.name}입니다.`);
 }
 const p1 = {
     name: 'Mark',
     age: 39,
 };
-hello(p1);
+hello1(p1);
