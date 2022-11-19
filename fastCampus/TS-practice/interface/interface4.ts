@@ -11,3 +11,11 @@ const p41: Person4 = {
     console.log(`안녕하세요! ${this.name}입니다.`)
   },
 }
+
+const p42: Person4 = {
+  name: 'Mark',
+  age: 39,
+  hello(): void {
+    console.log(`안녕하세요! ${this.name}입니다.`)
+  },
+}
