@@ -1,7 +1,7 @@
 interface Person8 {
   name: string;
   age?: number;
-  readonly gender: string;
+  gender: string;
 }
 
 const p81: Person8 = {
