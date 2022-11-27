@@ -1,9 +1,6 @@
 class Person {
-  name;
-
-  constructor(name: string) {
-    this.name = name;
-  }
+  name: string;
+  age: number;
 }
 
 const p1 = new Person("Mark");
