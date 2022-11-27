@@ -1,8 +1,8 @@
 class Person {
-  name: string = "mark";
-  age!: number;
+  public name: string = "mark";
+  private age!: number;
 
-  constructor(age?: number) {
+  public constructor(age?: number) {
     if (age === undefined) {
       this.age = 20;
     } else {
@@ -10,13 +10,8 @@ class Person {
     }
   }
 
-  async init() {
-
-  }
+  public async init() {}
 }
 
 const p1 = new Person(39);
-await p1.init();
-const p2 = new Person();
-
 console.log(p1)
