@@ -1,6 +1,6 @@
 class Person {
   name: string = "mark";
-  age: number;
+  age!: number;
 
   constructor(age?: number) {
     if (age === undefined) {
@@ -9,9 +9,14 @@ class Person {
       this.age = age;
     }
   }
+
+  async init() {
+
+  }
 }
 
 const p1 = new Person(39);
+await p1.init();
 const p2 = new Person();
 
 console.log(p1)
