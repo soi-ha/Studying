@@ -4,4 +4,13 @@ abstract class AbstractPerson {
   abstract setNamed(name: string) : void;
 }
 
-new AbstractPerson()
+// new AbstractPerson()
+
+class People extends AbstractPerson {
+  setNamed(name: string): void {
+    this._name = name;
+  }
+}
+
+const p = new People();
+p.setNamed("Mark");
