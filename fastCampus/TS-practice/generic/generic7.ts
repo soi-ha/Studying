@@ -11,6 +11,11 @@ const IPer: IPerson = {
 // type Keys = keyof IPerson;
 // const keys: Keys = "name";
 
+// getProp의 결과물
+// IPerson[keyof IPerson] 
+// =>IPerson[”name” | “age”] 
+// => IPerson[”name”] | IPerson[”age”]
+// => string | number
 function getProp(obj: IPerson, key: keyof IPerson): IPerson[keyof IPerson] {
   return obj[key]
 }
