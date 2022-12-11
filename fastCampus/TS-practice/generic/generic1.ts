@@ -24,5 +24,5 @@ function helloGeneric<T>(message: T): T {
 console.log(helloGeneric("Mark")); // "Mark"
 console.log(helloGeneric("Mark").length); // number로 인식. String.length
 console.log(helloGeneric(19)); // 19
-console.log(helloGeneric(19).length); // number로 인식했기 때문에 length 사용 불가
+// console.log(helloGeneric(19).length); // number로 인식했기 때문에 length 사용 불가
 console.log(helloGeneric(true)); // true
