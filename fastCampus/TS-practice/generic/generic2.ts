@@ -1,8 +1,8 @@
-function helloBasic<T>(message: T): T {
+function helloBasic<T, U>(message: T, comment: U): T {
   return message;
 }
 
-helloBasic<string>('number'); // string
+helloBasic<string, number>('number', 19); // string
 // helloBasic<string>(19); // error
 
-helloBasic(36); // 36
+helloBasic(36, 19); // 36
