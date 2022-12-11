@@ -3,7 +3,7 @@ interface IPerson {
   age: number;
 }
 
-const IPer: IPerson = {
+const per: IPerson = {
   name: "Mark",
   age: 19,
 }
@@ -11,15 +11,17 @@ const IPer: IPerson = {
 // type Keys = keyof IPerson;
 // const keys: Keys = "name";
 
-// getProp의 결과물
-// IPerson[keyof IPerson] 
-// =>IPerson[”name” | “age”] 
-// => IPerson[”name”] | IPerson[”age”]
-// => string | number
-function getProp(obj: IPerson, key: keyof IPerson): IPerson[keyof IPerson] {
+function getProp<T, K extends keyof T>(obj: T, key: K): T[K] {
   return obj[key]
 }
 
-function setProp(obj: IPerson, key: keyof IPerson, value: string | number): void {
+// getProp의 결과물
+getProp(per ,'name'); // string
+getProp(per, 'age') // numner
+
+function setProp<T, K extends keyof T>(obj: T, key: K, value: T[K]): void {
   obj[key] = value;
 }
+
+// setProp(per, "name", 39) // name과 맞지 않는 타입이기에 error
+setProp(per, "name", "Anna") // 맞는 타입이기에 값 변경 완료. value는 string이 됨.
