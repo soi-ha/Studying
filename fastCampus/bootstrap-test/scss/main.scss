@@ -1,0 +1,19 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/variables-dark";
+// @import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/root";
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  red,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
