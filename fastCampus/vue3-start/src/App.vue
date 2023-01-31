@@ -1,8 +1,9 @@
 <template>
-  <h1
-    :style="[fontStyle, backgroundStyle]"
-    @click="changeStyle">
-    Hello?!
+  <button @click="handler">
+    Click!
+  </button>
+  <h1 v-show="isShow">
+    Hello?
   </h1>
 </template>
 
@@ -10,18 +11,14 @@
 export default {
   data() {
     return {
-      fontStyle: {
-        color: 'orange',
-        fontSize: '30px'
-      },
-      backgroundStyle: {
-        backgroundStyle: 'black'
-      }
+      isShow: false,
+      count: 0
     }
   },
   methods: {
-    changeStyle() {
-      this.fontStyle.color = 'red'
+    handler() {
+      this.isShow = !this.isShow
+      this.count += 1
     }
   }
 }
