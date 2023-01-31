@@ -1,9 +1,7 @@
 <template>
-  <button @click="add">
-    ADD
-  </button>
-  <h1>{{ reversedMessage }}</h1>
-  <h1>{{ reversedMessage }}</h1>
+  <h1 @click="changeMessage">
+    {{ msg }}
+  </h1>
   <h1>{{ reversedMessage }}</h1>
 </template>
 
@@ -11,28 +9,25 @@
 export default {
   data() {
     return {
-      // Getter,Setter
-      msg: 'Hello Computed!'
+      msg: 'Hello?'
     }
   },
   computed: {
-    // Getter 
-    // reversedMessage() {
-    //   return this.msg.split('').reverse().join('') 
-    // }
-    reversedMessage: {
-      get() {
-        return this.msg.split('').reverse().join('') 
-      },
-      set(value) {
-        this.msg = value
-      }
+    reversedMessage() {
+      return this.msg.split('').reverse().join('') 
+    }
+  },
+  watch: {
+    msg(newValue) {
+      console.log('msg:', newValue)
+    },
+    reversedMessage() {
+      console.log('reversedMessage:', this.reversedMessage)
     }
   },
   methods: {
-    add() {
-      this.reversedMessage += '!?'
-      // this.msg += '!?'
+    changeMessage() {
+      this.msg = 'Good!'
     }
   }
 }
