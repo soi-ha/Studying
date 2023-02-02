@@ -1,28 +1,17 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div 
-    :class="{ large }"
-    :style="{ backgroundColor: color }"
-    class="btn">
+  <div class="btn">
     <slot></slot>
   </div>
+  <div
+    v-bind="$attrs"></div>
 </template>
 
 <script>
 export default {
-  props: {
-    color: {
-      type: String,
-      default: 'gray'
-    },
-    large: {
-      type: Boolean,
-      default: false
-    },
-    text: {
-      type: String,
-      default: ''
-    }
+  inheritAttrs: false,
+  created() {
+    console.log(this.$attrs)
   }
 }
 </script>
@@ -37,9 +26,5 @@ export default {
     background-color: gray;
     color: white;
     cursor: pointer;
-    &.large {
-      font-size: 20px;
-      padding: 10px 20px;
-    }
   }
 </style>
