@@ -1,14 +1,27 @@
 <template>
-  <input
-    type="text"
-    @keydown.a="handler" />
+  <MyBtn>Banana</MyBtn>
+  <MyBtn
+    :color="color">
+    Apple
+  </MyBtn>
+  <MyBtn
+    large
+    color="royalblue">
+    Orange
+  </MyBtn>
+  <MyBtn>Cherry</MyBtn>
 </template>
 
 <script>
+import MyBtn from '~/components/MyBtn'
+
 export default {
-  methods: {
-    handler() {
-      console.log('Enter!!')
+  components: {
+    MyBtn
+  },
+  data() {
+    return {
+      color: '#000'
     }
   }
 }
