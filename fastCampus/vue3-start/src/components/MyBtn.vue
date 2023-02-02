@@ -3,15 +3,29 @@
   <div class="btn">
     <slot></slot>
   </div>
-  <div
-    v-bind="$attrs"></div>
+  <h1 @click="$emit('soha',123)">
+    abc
+  </h1>
+  <input
+    type="text"
+    v-model="msg" />
 </template>
 
 <script>
 export default {
-  inheritAttrs: false,
-  created() {
-    console.log(this.$attrs)
+  emits: [
+    'soha',
+    'changeMsg'
+  ],
+  data() {
+    return {
+      msg: ''
+    }
+  },
+  watch: {
+    msg() {
+      this.$emit('changeMsg', this.msg)
+    }
   }
 }
 </script>
