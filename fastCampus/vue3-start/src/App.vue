@@ -1,33 +1,16 @@
 <template>
-  <MyBtn>
-    <template
-      v-slot:
-      icon>
-      <span>(B)</span>
-    </template>
-    <template
-      v-slot:
-      text>
-      <span>Banana</span>
-    </template>
-  </MyBtn>
+  <Hello ref="hello" />
 </template>
 
 <script>
-import MyBtn from '~/components/MyBtn'
+import Hello from '~/components/Hello.vue'
 
 export default {
-  components: {
-    MyBtn
+  components: { 
+    Hello 
   },
-  methods: {
-    log(event) {
-      console.log('Click!!')
-      console.log(event)
-    },
-    logMsg(msg) {
-      console.log(msg)
-    }
+  mounted() {
+    console.log(this.$refs.hello.$el)
   }
 }
 </script>
