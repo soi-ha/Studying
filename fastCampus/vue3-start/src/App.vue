@@ -1,8 +1,15 @@
 <template>
-  <MyBtn
-    @soha="log"
-    @change-msg="logMsg">
-    Banana
+  <MyBtn>
+    <template
+      v-slot:
+      icon>
+      <span>(B)</span>
+    </template>
+    <template
+      v-slot:
+      text>
+      <span>Banana</span>
+    </template>
   </MyBtn>
 </template>
 

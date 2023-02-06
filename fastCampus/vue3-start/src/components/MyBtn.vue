@@ -1,14 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="btn">
-    <slot></slot>
+    <slot name="icon"></slot>
+    <slot name="text"></slot>
   </div>
-  <h1 @click="$emit('soha',123)">
-    abc
-  </h1>
-  <input
-    type="text"
-    v-model="msg" />
 </template>
 
 <script>
