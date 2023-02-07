@@ -1,16 +1,22 @@
 <template>
-  <Hello ref="hello" />
+  <div @click="increase">
+    {{ count }}
+  </div>
 </template>
 
 <script>
-import Hello from '~/components/Hello.vue'
-
+import { ref } from 'vue'
 export default {
-  components: { 
-    Hello 
-  },
-  mounted() {
-    console.log(this.$refs.hello.$el)
+  setup() {
+    let count = ref(0)
+    function increase() {
+      count.value += 1
+    }
+
+    return {
+      count,
+      increase
+    }
   }
 }
 </script>
