@@ -4,7 +4,8 @@
       v-model="title"
       class="form-control"
       type="text" 
-      placeholder="Search for Movies, Series $ more" />
+      placeholder="Search for Movies, Series $ more" 
+      @keyup.enter="apply" />
     <div class="selects">
       <select
         v-for="filter in filters"
@@ -23,6 +24,11 @@
         </option>
       </select>
     </div>
+    <button
+      class="btn btn-primary"
+      @click="apply">
+      Apply
+    </button>
   </div>
 </template>
 
@@ -53,8 +59,14 @@ export default {
             }
             return years
           })()
-        },
+        }
       ]
+    }
+  },
+  methods: {
+    apply() {
+      // 영화검색 기능
+
     }
   }
 }
@@ -79,6 +91,11 @@ export default {
           margin-right: 0;
         }
       }
+    }
+    .btn {
+      width: 120px;
+      height: 50px;
+      font-weight: 700;
     }
   }
 </style>
