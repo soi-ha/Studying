@@ -96,6 +96,7 @@ export default {
       width: 120px;
       height: 50px;
       font-weight: 700;
+      flex-shrink: 0;
     }
   }
 </style>
