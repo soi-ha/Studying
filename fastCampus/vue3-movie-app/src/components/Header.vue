@@ -1,5 +1,6 @@
 <template>
   <header>
+    <Logo />
     <div class="nav nav-pills">
       <div
         v-for="nav in navigations"
@@ -17,7 +18,11 @@
 </template>
 
 <script>
+import Logo from '~/components/Logo'
 export default {
+  components: {
+    Logo
+  },
   data() {
     return {
       navigations: [
