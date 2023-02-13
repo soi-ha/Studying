@@ -2,8 +2,9 @@
   <div class="container">
     <div class="inner">
       <MovieItem
-        v-for="movie in moives"
-        :key="movie.imdbID" />
+        v-for="movie in movies"
+        :key="movie.imdbID" 
+        :movie="movie" />
     </div>
   </div>
 </template>
@@ -14,9 +15,11 @@ export default {
   components: {
     MovieItem
   },
-  data() {
-    return {
-      movies: []
+  computed: {
+    movies() {
+      return this.$store.state.movie.movies
+      // store에 접근해서 스토어의 state(상태)중에 
+      // movie 모듈에 접근하여 moives 데이터를 가져와서 moives라는 계산된 메소드에 사용한다.
     }
   }
 }

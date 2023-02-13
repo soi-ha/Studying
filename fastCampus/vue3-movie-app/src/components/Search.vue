@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
   data() {
     return {
@@ -67,10 +65,15 @@ export default {
   },
   methods: {
     async apply() {
-      // 영화검색 기능
-      const OMDB_API_KEY = '7035c60c'
-      const res = await axios.get(`https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${this.title}&type=${this.type}&y=${this.year}&page=1`)
-      console.log(res)
+      // 영화검색 기능, movie.js로 데이터가 넘어감
+      this.$store.dispatch('movie/searchMovies', { 
+        // 여기서 movie는 모듈 movie임. 
+        // index.js에서 movie 모듈을 hello 이름으로 설정했다면, 여기서도 movie가 아닌 hello라고 작성해야 함.
+        title: this.title,
+        type: this.type,
+        number: this.number,
+        year: this.year
+      })
     }
   }
 }
