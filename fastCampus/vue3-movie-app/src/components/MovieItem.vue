@@ -39,6 +39,15 @@ export default {
   background-size: cover;
   overflow: hidden;
   position: relative;
+  &:hover::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 6px solid $primary;
+  }
   .info {
     background-color: rgba($black, .3);
     width: 100%;
@@ -48,6 +57,16 @@ export default {
     position: absolute;
     left: 0;
     bottom: 0;
+    backdrop-filter: blur(10px);
+    .year {
+      color: $primary;
+    }
+    .title {
+      color: $white;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 }
 </style>
