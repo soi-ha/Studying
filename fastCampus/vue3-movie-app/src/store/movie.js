@@ -6,7 +6,8 @@ export default {
   state: () => ({
     movies: [],
     message: 'Search for the movie title!',
-    loading: false
+    loading: false,
+    theMovie: {}
   }),
   getters: {},
   mutations: {
@@ -71,6 +72,29 @@ export default {
           loading: false
         })
       }
+    },
+    async searchMovieWithId({ state, commit }, payload) {
+      if (state.loading) return
+
+      commit('updateState', {
+        theMovie: {},
+        loading: true
+      })
+
+      try {
+        const res = await _fetchMovie(payload)
+        commit('updateState', {
+          theMovie: res.data
+        })
+      } catch (error) {
+        commit('updateState', {
+          theMovie: {}
+        })
+      } finally {
+        commit('updateState', {
+          loading: false
+        })
+      }
     }
   }
 }
@@ -78,9 +102,11 @@ export default {
 // 해당 내용이 복잡해질수록 재활욜성이 높아진다.
 // 안에 내용들을 반복적으로 작성할 필요가 없다는 이야기니까.
 function _fetchMovie(payload) {
-  const { title, type, year, page } = payload
+  const { title, type, year, page, id } = payload
   const OMDB_API_KEY = '7035c60c'
-  const url = `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
+  const url = id 
+    ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` // 단일 영화 정보
+    : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}` // 여러개의 영화 정보
 
   return new Promise((resolve, reject) => {
     axios.get(url)
