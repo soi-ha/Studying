@@ -1,5 +1,8 @@
 <template>
-  <h1>Movie!</h1>
+  <div class="container">
+    <div class="skeletons">
+    </div>
+  </div>
 </template>
 
 <script>
