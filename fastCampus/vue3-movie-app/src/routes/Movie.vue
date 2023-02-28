@@ -37,6 +37,18 @@
         </div>
         <div class="ratings">
           <h3>Ratings</h3>
+          <div class="rating-wrap">
+            <div 
+              v-for="{ Source: name, Value: score } in theMovie.Ratings"
+              :key="name"
+              :title="name"
+              class="rating">
+              <img 
+                :src="`https://raw.githubusercontent.com/ParkYoungWoong/vue3-movie-app/master/src/assets/${name}.png`" 
+                :alt="name" />
+              <span>{{ score }}</span>
+            </div>
+          </div>
         </div>
         <div>
           <h3>Actors</h3>
@@ -161,7 +173,19 @@ export default {
         margin-top: 20px;
       }
       .ratings {
-
+        .rating-wrap {
+          display: flex;
+          .rating {
+            display: flex;
+            align-items: center;
+            margin-right: 30px;
+            img {
+              height: 30px;
+              flex-shrink: 0;
+              margin-right: 6px;
+            }
+          }
+        }
       }
       h3 {
         margin: 24px 0 6px;
