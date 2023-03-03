@@ -80,6 +80,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/scss/main";
+
   .container {
     display: flex;
     > * { // .container의 모든 자식요소를 의미
@@ -104,6 +106,27 @@ export default {
       height: 50px;
       font-weight: 700;
       flex-shrink: 0;
+    }
+    @include media-breakpoint-down(lg) {
+      display: block; // 수평에서 수직으로 변경
+      input {
+        margin-right: 0;
+        margin-left: 10px;
+        margin-bottom: 10px;
+      }
+      .selects {
+        margin-right: 0;
+        margin-left: 10px;
+        width: 100%;
+        select {
+          width: 100%;
+        }
+      }
+      .btn {
+        width: 100%;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
     }
   }
 </style>
