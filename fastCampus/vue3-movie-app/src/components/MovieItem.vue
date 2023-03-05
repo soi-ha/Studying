@@ -54,9 +54,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// BT의 값을 사용할 수 있도록 호출
-@import "~/scss/main";
-
 .movie {
   // 항상 높이가 가로의 2/3을 유지하도록 한다
   $width: 200px;

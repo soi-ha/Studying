@@ -58,8 +58,6 @@ export default {
 </script>
 
 <style lang="scss" scpoed>
-@import "~/scss/main";
-
 .about {
   text-align: center;
   .photo {
