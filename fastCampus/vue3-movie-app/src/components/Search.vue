@@ -109,12 +109,10 @@ export default {
       display: block; // 수평에서 수직으로 변경
       input {
         margin-right: 0;
-        margin-left: 10px;
         margin-bottom: 10px;
       }
       .selects {
         margin-right: 0;
-        margin-left: 10px;
         width: 100%;
         select {
           width: 100%;
@@ -122,7 +120,6 @@ export default {
       }
       .btn {
         width: 100%;
-        margin-left: 10px;
         margin-top: 10px;
       }
     }

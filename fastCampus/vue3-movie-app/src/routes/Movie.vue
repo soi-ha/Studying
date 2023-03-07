@@ -90,12 +90,12 @@ export default {
   },
   computed: {
     ...mapState('movie', [
-      'theMoive',
+      'theMovie',
       'loading'
     ])
   },
   created() {
-    console.log(this.$route)
+    // console.log(this.$route)
     this.$store.dispatch('movie/searchMovieWithId', {
       id: this.$route.params.id
     })
