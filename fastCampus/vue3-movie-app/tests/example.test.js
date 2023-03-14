@@ -1,33 +1,24 @@
-import { double } from './example'
+import { asyncFn } from './example';
 
-describe('Group1', () => {
-  beforeAll(() => {
-    console.log('beforeAll!')
-  })
-  afterAll(() => {
-    console.log('afterAll!')
-  })
+describe('비동기 테스트', () => {
 
-  beforeEach(() => {
-    console.log('beforeEach!')
-  })
-  afterEach(() => {
-    console.log('afterEach!')
-  })
+  test('async/await', async () => {
+    const res = await asyncFn()
+    expect(res).toBe('Done!')
+  },7000)
+  // test('done', (done) => {
+  //   asyncFn().then(res => {
+  //     expect(res).toBe('Done!')
+  //     done()
+  //   })
+  // })
 
-  test('첫 테스트', () => {
-    console.log('첫 테스트!')
-    expect(123).toBe(123)
-  })
-  
-  test('인수가 숫자 데이터입니다', () => {
-    console.log('인수가 숫자 데이터입니다!')
-    expect(double(3)).toBe(6)
-    expect(double(10)).toBe(20)
-  })
-  
-  test('인수가 없습니다', () => {
-    console.log('인수가 없습니다!')
-    expect(double()).toBe(0)
-  })
+  // test('then', () => {
+  //   return asyncFn().then(res => {
+  //     expect(res).toBe('Done!')
+  //   })
+  // })
+
+  // test('resolves', () => expect(asyncFn()).resolves.toBe('Done!'))
+
 })
