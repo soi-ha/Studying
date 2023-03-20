@@ -8,7 +8,8 @@ module.exports = {
   },
   modulePathIgnorePatterns: [
     '<rootDir>/node_modules',
-    '<rootDir>/dist'
+    '<rootDir>/dist',
+    '<rootDir>/cypress'
   ],
   testURL: 'http://localhost/',
   transform: {
