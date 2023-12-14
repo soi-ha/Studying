@@ -12,8 +12,8 @@ const OutputView = {
     Console.print('');
   },
 
-  winnerResult() {
-    Console.print(`최종 우승자 : `);
+  winnerResult(winner) {
+    Console.print(`최종 우승자 : ${winner}`);
   },
 };
 
