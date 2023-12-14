@@ -9,6 +9,6 @@ export default async function WriteNumberController() {
     return number;
   } catch (error) {
     Console.print(error.message);
-    // throw error
+    throw error;
   }
 }

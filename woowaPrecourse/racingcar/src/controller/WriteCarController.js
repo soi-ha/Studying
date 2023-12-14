@@ -5,10 +5,11 @@ import { Console } from '@woowacourse/mission-utils';
 export default async function WriteCarController() {
   try {
     const car = await InputView.writeCar();
-    new WriteCar(car);
-    return car;
+    const carList = car.split(',');
+    new WriteCar(carList);
+    return carList;
   } catch (error) {
     Console.print(error.message);
-    // throw error;
+    throw error;
   }
 }
