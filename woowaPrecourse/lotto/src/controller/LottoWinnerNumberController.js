@@ -6,7 +6,7 @@ export default async function LottoWinnerNumberController() {
   try {
     const winnerNumber = await InputView.writeWinnerNumber();
     new Lotto(winnerNumber);
-    return winnerNumber;
+    return winnerNumber.map(Number);
   } catch (error) {
     Console.print(error.message);
     return LottoWinnerNumberController();

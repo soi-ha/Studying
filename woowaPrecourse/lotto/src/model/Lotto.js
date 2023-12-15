@@ -14,7 +14,7 @@ class Lotto {
 
   #validateCheckNumber(numbers) {
     if (numbers.length !== 6) {
-      throw new Error('[ERROR] 로또 번호는 6개여야 합니다.');
+      throw new Error('[ERROR] 당첨 번호는 6개여야 합니다.');
     }
   }
 
@@ -25,7 +25,7 @@ class Lotto {
     });
 
     if (filterNumbers.length !== numbers.length) {
-      throw new Error('[ERROR] 로또 번호는 1부터 45 사이의 숫자여야 합니다.');
+      throw new Error('[ERROR] 당첨 번호는 1부터 45 사이의 숫자여야 합니다.');
     }
   }
 
