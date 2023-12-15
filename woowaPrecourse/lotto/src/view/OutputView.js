@@ -1,9 +1,11 @@
 import { Console } from '@woowacourse/mission-utils';
 
 const OutputView = {
-  printLotto() {
-    Console.print('{}개를 구매했습니다.');
-    Console.print('[]');
+  printLotto(money, lotto) {
+    Console.print(`${money / 1000}개를 구매했습니다.`);
+    lotto.forEach((ticket) => {
+      Console.print(ticket);
+    });
   },
 
   printWinningStatistics() {
