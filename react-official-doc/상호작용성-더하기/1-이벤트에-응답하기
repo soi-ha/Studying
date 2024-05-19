@@ -1,0 +1,76 @@
+# 🔗 [이벤트에 응답하기](https://ko.react.dev/learn/responding-to-events)
+
+## 기억할 것
+
+이벤트 핸들러 함수는 다음 특징을 가집니다.  
+주로 컴포넌트 내부에서 정의됩니다.  
+handle로 시작하고 그 뒤에 이벤트명을 붙인 함수명을 가집니다.
+
+이벤트 핸들러로 전달한 함수들은 호출이 아닌 전달되어야 합니다. 아래는 예시입니다.
+
+| 함수를 전달하기 (올바른 예시)    | 함수를 호출하기 (잘못된 예시)      |
+| -------------------------------- | ---------------------------------- |
+| `<button onClick={handleClick}>` | `<button onClick={handleClick()}>` |
+
+이 차이는 미묘합니다.  
+첫 번째 예시에서 handleClick 함수는 onClick 이벤트 핸들러에 전달되었습니다. 이후 React는 이 내용을 기억하고 오직 사용자가 버튼을 클릭하였을 때만 함수를 호출하도록 합니다.
+
+두 번째 예시에서는 handleClick() 끝의 ()가 렌더링 과정 중 클릭이 없었음에도 불구하고 즉시 함수를 실행하도록 만듭니다. 이는 JSX { 와 } 내의 자바스크립트가 즉시 실행되기 때문입니다.
+
+인라인으로 코드를 작성할 때에도 동일한 함정이 다른 형태로 나타납니다.
+
+| 함수를 전달하기 (올바른 예시)           | 함수를 호출하기 (잘못된 예시)     |
+| --------------------------------------- | --------------------------------- |
+| `<button onClick={() => alert('...')}>` | `<button onClick={alert('...')}>` |
+
+다음과 같이 인라인 함수를 전달하면 버튼을 클릭할 때마다 실행되는 것이 아니라 컴포넌트가 렌더링 될 때마다 실행될 것입니다.
+
+```jsx
+// 이 alert는 클릭 시 실행되지 않고 컴포넌트가 렌더링 된 시점에 실행됩니다!
+<button onClick={alert('You clicked me!')}>
+```
+
+만약 이벤트 핸들러를 인라인으로 정의하고자 한다면, 아래와 같이 익명 함수로 감싸면 됩니다.
+
+```jsx
+<button onClick={() => alert('You clicked me!')}>
+```
+
+이러한 방법으로 매 렌더링마다 내부 코드를 실행하지 않고 함수를 생성하여 추후 이벤트에 의해 호출되게 합니다.
+
+## 요약
+
+- <button>과 같은 요소에 함수를 prop으로 전달하여 이벤트를 핸들링할 수 있습니다.
+- 이벤트 핸들러는 호출이 아니라 전달만 가능합니다! onClick={handleClick()}이 아니라 onClick={handleClick}입니다.
+- 이벤트 핸들러 함수는 별개의 함수 혹은 인라인 형태로 정의할 수 있습니다.
+- 이벤트 핸들러는 컴포넌트 내부에서 정의되기에 다른 prop에 접근할 수 있습니다.
+- 이벤트 핸들러는 부모에서 선언하여 자식에게 prop으로 전달할 수 있습니다.
+- 사용자 정의 이벤트 핸들러의 이름을 애플리케이션에 특화된 이름으로 명명할 수 있습니다.
+- 이벤트는 위쪽으로 전파됩니다. 첫 번째 매개변수로 e.stopPropagation()를 호출하여 방지할 수 있습니다.
+- 이벤트는 의도치 않은 기본 브라우저 동작을 유발할 수 있습니다. e.preventDefault()를 호출하여 방지할 수 있습니다.
+- 명시적으로 이벤트 핸들러 prop을 자식 핸들러에서 호출하는 것은 전파에 대한 좋은 대안이 될 수 있습니다.
+
+## 1. 이벤트 핸들러 고치기
+
+```jsx
+export default function LightSwitch() {
+	function handleClick() {
+		let bodyStyle = document.body.style;
+		if (bodyStyle.backgroundColor === 'black') {
+			bodyStyle.backgroundColor = 'white';
+		} else {
+			bodyStyle.backgroundColor = 'black';
+		}
+	}
+
+	return <button onClick={handleClick}>Toggle the lights</button>;
+}
+```
+
+## 2. 이벤트들 연결하기
+
+```jsx
+export default function ColorSwitch({ onChangeColor }) {
+	return <button onClick={onChangeColor}>Change color</button>;
+}
+```
